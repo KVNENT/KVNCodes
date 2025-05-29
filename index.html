@@ -2078,11 +2078,14 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
-            fetch('https://script.google.com/macros/s/AKfycbxs5hc0pe1OPPbkWcW_UPdYROIkjvQSclwdIbfn93Rv-PkfXYzcccBuQw15qwfrO359/exec', {
-                method: 'POST',
-                body: JSON.stringify({ name, email, subject, message }),
-                headers: { 'Content-Type': 'application/json' },
-            })
+            fetch('https://script.google.com/macros/s/AKfycbzLyFEYb8be-u5_rTG4HI8riqFSjDieWo0UZ0pzdvbYD4ZsP9n3ohpo04lyDGVRyVM-/exec', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ name, email, subject, message })
+})
+
                 .then(response => response.json())
                 .then(data => {
                     alert('Thank you for your message! I’ll get back to you soon.');
