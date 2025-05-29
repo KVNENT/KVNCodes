@@ -2088,10 +2088,11 @@
                     alert('Thank you for your message! I’ll get back to you soon.');
                     contactForm.reset();
                 })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    alert('Something went wrong. Please try again later.');
-                });
+                .catch(async (error) => {
+  const responseText = await error?.response?.text?.();
+  console.error('Error response:', responseText || error);
+  alert('Something went wrong. Please try again later.');
+});
         });
 
 
